@@ -1,20 +1,31 @@
-﻿using System;
-using System.Linq;
+﻿//// Изменяем внешний вид кнопки для Windows-версии
+//if (Device.RuntimePlatform == Device.UWP)
+//    loginButton.CornerRadius = 0;
+
+using System;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace HomeApp.Pages
 {
     public partial class LoginPage : ContentPage
     {
-        // Константа для текста кнопки
         public const string BUTTON_TEXT = "Войти";
-        // Переменная счетчика
+
         public static int loginCouner = 0;
+
+        IDeviceDetector detector = DependencyService.Get<IDeviceDetector>();
 
         public LoginPage()
         {
             InitializeComponent();
+
+            if (Device.Idiom == TargetIdiom.Desktop)
+                loginButton.CornerRadius = 0;
+
+            runningDevice.Text = detector.GetDevice();
+
+            // Устанавливаем динамический ресурс с помощью специально метода
+            infoMessage.SetDynamicResource(Label.TextColorProperty, "errorColor");
         }
 
         /// <summary>
@@ -30,14 +41,17 @@ namespace HomeApp.Pages
             {
                 loginButton.IsEnabled = false;
 
-                // Получаем последний дочерний элемент, используя свойство Children, затем выполняем распаковку
-                var infoMessage = (Label)stackLayout.Children.Last();
-                // Задаем текст элемента
+                // Обновляем динамический ресурс по необходимости
+                Resources["errorColor"] = Color.FromHex("#e70d4f");
                 infoMessage.Text = "Слишком много попыток! Попробуйте позже";
             }
             else
             {
-                loginButton.Text = $"Выполняется вход...   Попыток входа: {loginCouner}";
+                // Обновляем динамический ресурс по необходимости
+                Resources["errorColor"] = Color.FromHex("#ff8e00");
+
+                loginButton.Text = $"Выполняется вход...";
+                infoMessage.Text = $" Попыток входа: {loginCouner}";
             }
 
             loginCouner += 1;

@@ -12,7 +12,20 @@ namespace HomeApp
             // инициализация интерфейса
             InitializeComponent();
             // Инициализация главного экрана
-            MainPage = new LoginPage(); // new LoadingPage();  new MainPage();
+            MainPage = new DevicesPage();
+            //MainPage = new DeviceControlPage();
+            //MainPage = new NewDevicePage();
+            //MainPage = new CsharpPaddingPage();
+            //MainPage = new PaddingPage();
+            //MainPage = new GridPage();
+            //MainPage = new AboutPage();
+            //MainPage = new ClimatePage();
+            //MainPage = new LoadingPage();
+            //MainPage = new MainPage();
+            //MainPage = new LoginPage();
+            //MainPage = new RegisterPage();
+            //MainPage = new ProfilePage();
+            //MainPage = new WebPage();
         }
 
         protected override void OnStart()
