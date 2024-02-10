@@ -7,12 +7,15 @@ namespace HomeApp
 {
     public partial class App : Application
     {
+
         public App()
         {
             // инициализация интерфейса
             InitializeComponent();
-            // Инициализация главного экрана
-            MainPage = new DevicesPage();
+            // Инициализация главного экрана и стека навигации
+            MainPage = new NavigationPage(new LoginPage());
+
+            //MainPage = new DevicesPage();
             //MainPage = new DeviceControlPage();
             //MainPage = new NewDevicePage();
             //MainPage = new CsharpPaddingPage();
@@ -26,7 +29,10 @@ namespace HomeApp
             //MainPage = new RegisterPage();
             //MainPage = new ProfilePage();
             //MainPage = new WebPage();
-        }
+            //MainPage = new AlarmPage();
+            //MainPage = new BindingPage();
+            //MainPage = new BindingModePage();
+        }    
 
         protected override void OnStart()
         {
