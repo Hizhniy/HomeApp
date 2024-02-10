@@ -41,7 +41,7 @@ namespace HomeApp.Pages
                 Margin = new Thickness(30, 10),
                 Placeholder = "Название",
                 Text = DeviceName,
-                Style = (Style)App.Current.Resources["ValidInputStyle"],
+                Style = (Style)App.Current.Resources["ValidInputStyleEntry"]
             };
             newDeviceName.TextChanged += (sender, e) => InputTextChanged(sender, e, newDeviceName);
             stackLayout.Children.Add(newDeviceName);
@@ -54,7 +54,7 @@ namespace HomeApp.Pages
                 Margin = new Thickness(30, 10),
                 Placeholder = "Описание",
                 Text = DeviceDescription,
-                Style = (Style)App.Current.Resources["ValidInputStyle"]
+                Style = (Style)App.Current.Resources["ValidInputStyleEditor"]
             };
             newDeviceDescription.TextChanged += (sender, e) => InputTextChanged(sender, e, newDeviceDescription);
             stackLayout.Children.Add(newDeviceDescription);

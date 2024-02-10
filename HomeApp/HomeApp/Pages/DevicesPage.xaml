@@ -6,11 +6,24 @@
             Title="{x:Static local:DevicePage.PageName}">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <Style x:Key="ValidInputStyle" TargetType="Entry">
+            <Style x:Key="ValidInputStyleEntry" TargetType="Entry">
                 <Setter Property="TextColor" Value="Green" />
+            </Style>
+            <Style x:Key="ValidInputStyleEditor" TargetType="Editor">
+                <Setter Property="TextColor" Value="Blue" />
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
+
+    <!--<Application.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ValidInputStyle" TargetType="VisualElement">
+                <Setter Property="BackgroundColor" Value="AliceBlue" />
+                <Setter Property="Margin" Value="30,10" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>-->
+
     <StackLayout x:Name="stackLayout" BackgroundColor="LightGray"  Padding="0, 20">
     </StackLayout>
 </ContentPage>
