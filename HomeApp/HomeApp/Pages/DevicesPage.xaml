@@ -4,6 +4,13 @@
             xmlns:local="clr-namespace:HomeApp.Pages"
             x:Class="HomeApp.Pages.DevicePage"
             Title="{x:Static local:DevicePage.PageName}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ValidInputStyle" TargetType="Entry">
+                <Setter Property="TextColor" Value="Green" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout x:Name="stackLayout" BackgroundColor="LightGray"  Padding="0, 20">
     </StackLayout>
 </ContentPage>
